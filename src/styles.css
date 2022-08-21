@@ -1,0 +1,92 @@
+body {
+  font-family: "Anek Malayalam", sans-serif;
+  background-color: #fffded;
+  color: #3e4594;
+  text-align: center;
+}
+h1 {
+  font-family: "Acme", sans-serif;
+  font-size: 60px;
+  font-style: italic;
+  margin: 10px;
+  margin-bottom: 0px;
+  color: #3e4594;
+}
+img {
+  width: 250px;
+}
+.btn-primary {
+  background-color: #60cfe9;
+  color: #3e4594;
+  border-color: #0fb8dd;
+}
+.btn-primary:hover {
+  background-color: #3e4594;
+  color: #60cfe9;
+}
+#back-to-current {
+  background-color: #3e4594;
+  color: #60cfe9;
+  border-color: #0fb8dd;
+  margin-top: 10px;
+}
+#back-to-current:hover {
+  background-color: #60cfe9;
+  color: #3e4594;
+}
+
+#chosen-city {
+  text-transform: capitalize;
+  font-size: 45px;
+}
+#current-day {
+  font-size: 20px;
+}
+.sun-icon {
+  font-size: 100px;
+  color: #fcd53f;
+}
+.temperature-main {
+  background-color: #fdfacf;
+  font-size: 25px;
+  border-width: 0px;
+  padding: 30px;
+}
+#current-temperature {
+  font-size: 70px;
+  padding-top: 10px;
+}
+.units {
+  font-size: 20px;
+  position: relative;
+  top: -34px;
+}
+
+#current-description {
+  font-size: 35px;
+}
+#current-humidity {
+  font-size: 18px;
+
+  margin-left: 12px;
+}
+.card {
+  border-color: #4b54b1;
+}
+.sun-icon-bottom {
+  font-size: 40px;
+  color: #fcd53f;
+}
+
+.card-title {
+  font-size: 20px;
+  text-align: center;
+  font-weight: 450;
+  color: #0fb8dd;
+}
+.temperature-bottom {
+  font-size: 18px;
+}
+strong {
+  font-weight: 530;
+}
