@@ -42,9 +42,8 @@ img {
 #current-day {
   font-size: 20px;
 }
-.sun-icon {
-  font-size: 100px;
-  color: #fcd53f;
+#icon-main {
+  width: 130px;
 }
 .temperature-main {
   background-color: #fdfacf;

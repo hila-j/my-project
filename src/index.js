@@ -35,7 +35,7 @@ function formatDate(currentDay) {
     minutes = `0${minutes}`;
   }
   return `${day}, ${date} ${month} ${fullYear},
-   ${hour}:${minutes}`;
+   ${hour}:${minutes} (current location)`;
 }
 function retriveLocation(event) {
   event.preventDefault();
@@ -70,6 +70,16 @@ function updateData(response) {
   document.querySelector(
     "#current-humidity"
   ).innerHTML = `humidity:${response.data.main.humidity}%`;
+
+  document
+    .querySelector("#icon-main")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  document
+    .querySelector("#icon-main")
+    .setAttribute("alt", response.data.weather[0].description);
 }
 
 let currentDay = document.querySelector("#current-day");
