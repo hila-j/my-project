@@ -62,9 +62,9 @@ function updateData(response) {
   document.querySelector(
     "#chosen-city"
   ).innerHTML = `${response.data.name}, ${response.data.sys.country}`;
-  document.querySelector("#current-temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemp = response.data.main.temp;
+  document.querySelector("#current-temperature").innerHTML =
+    Math.round(celsiusTemp);
   document.querySelector("#current-description").innerHTML =
     response.data.weather[0].description;
   document.querySelector(
@@ -82,11 +82,35 @@ function updateData(response) {
     .setAttribute("alt", response.data.weather[0].description);
 }
 
+function changeTempToFahrenheit(event) {
+  event.preventDefault();
+  let currentTemperature = document.querySelector("#current-temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  currentTemperature.innerHTML = Math.round(fahrenheitTemp);
+}
+function changeTempToCelsius(event) {
+  event.preventDefault();
+  let currentTemperature = document.querySelector("#current-temperature");
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
+  currentTemperature.innerHTML = Math.round(celsiusTemp);
+}
+
 let currentDay = document.querySelector("#current-day");
 currentDay.innerHTML = formatDate(new Date());
 
+let celsiusTemp = null;
+
 let searchForm = document.querySelector("#search-form");
 let chosenCity = searchForm.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-temp");
+fahrenheitLink.addEventListener("click", changeTempToFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-temp");
+celsiusLink.addEventListener("click", changeTempToCelsius);
 
 let buttonBackToCurrent = document.querySelector("#back-to-current");
 let currentLocation = buttonBackToCurrent.addEventListener(
@@ -95,21 +119,3 @@ let currentLocation = buttonBackToCurrent.addEventListener(
 );
 
 searchCity("tel aviv");
-
-//function changeTempToFahrenheit(event) {
-//event.preventDefault();
-//let currentTemperature = document.querySelector("#current-temperature");
-//currentTemperature.innerHTML = 82;
-//}
-
-//function changeTempToCelsius(event) {
-//event.preventDefault();
-// let currentTemperature = document.querySelector("#current-temperature");
-// currentTemperature.innerHTML = 28;
-//}
-
-//let fahrenheitTemp = document.querySelector("#fahrenheit-temp");
-//fahrenheitTemp.addEventListener("click", changeTempToFahrenheit);
-
-//let celsiusTemp = document.querySelector("#celsius-temp");
-//celsiusTemp.addEventListener("click", changeTempToCelsius);

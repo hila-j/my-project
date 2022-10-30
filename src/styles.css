@@ -1,6 +1,6 @@
 body {
   font-family: "Anek Malayalam", sans-serif;
-  background-color: #fffded;
+  background-color: #fdfbf2;
   color: #3e4594;
   text-align: center;
 }
@@ -42,6 +42,11 @@ img {
 #current-day {
   font-size: 20px;
 }
+.icon-main {
+  background-color: #74dcf3;
+  font-size: 25px;
+  border-width: 0px;
+}
 #icon-main {
   width: 130px;
 }
@@ -51,6 +56,7 @@ img {
   border-width: 0px;
   padding: 30px;
 }
+
 #current-temperature {
   font-size: 70px;
   padding-top: 10px;
@@ -59,6 +65,15 @@ img {
   font-size: 20px;
   position: relative;
   top: -34px;
+}
+.active {
+  color: #3e4594;
+  cursor: default;
+  text-decoration: none;
+}
+.active:hover {
+  color: #3e4594;
+  text-decoration: none;
 }
 
 #current-description {
