@@ -69,8 +69,10 @@ function updateData(response) {
     response.data.weather[0].description;
   document.querySelector(
     "#current-humidity"
-  ).innerHTML = `humidity:${response.data.main.humidity}%`;
-
+  ).innerHTML = `humidity: ${response.data.main.humidity}%`;
+  document.querySelector("#current-wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
   document
     .querySelector("#icon-main")
     .setAttribute(

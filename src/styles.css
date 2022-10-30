@@ -43,7 +43,7 @@ img {
   font-size: 20px;
 }
 .icon-main {
-  background-color: #74dcf3;
+  background-color: #96e3f4;
   font-size: 25px;
   border-width: 0px;
 }
@@ -81,8 +81,12 @@ img {
 }
 #current-humidity {
   font-size: 18px;
-
-  margin-left: 12px;
+  margin-top: 10px;
+  margin-left: -51px;
+}
+#wind {
+  font-size: 18px;
+  margin-left: -51px;
 }
 .card {
   border-color: #4b54b1;
