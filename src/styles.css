@@ -28,7 +28,7 @@ img {
   background-color: #3e4594;
   color: #60cfe9;
   border-color: #0fb8dd;
-  margin-top: 10px;
+  margin-top: 19px;
 }
 #back-to-current:hover {
   background-color: #60cfe9;
@@ -82,11 +82,10 @@ img {
 #current-humidity {
   font-size: 18px;
   margin-top: 10px;
-  margin-left: -51px;
 }
 #wind {
   font-size: 18px;
-  margin-left: -51px;
+  margin-bottom: 20px;
 }
 .card {
   border-color: #4b54b1;

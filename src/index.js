@@ -35,7 +35,7 @@ function formatDate(currentDay) {
     minutes = `0${minutes}`;
   }
   return `${day}, ${date} ${month} ${fullYear},
-   ${hour}:${minutes} (current location)`;
+   ${hour}:${minutes} <div>(current location) </div>`;
 }
 function retriveLocation(event) {
   event.preventDefault();
@@ -82,6 +82,8 @@ function updateData(response) {
   document
     .querySelector("#icon-main")
     .setAttribute("alt", response.data.weather[0].description);
+
+  displayForecast();
 }
 
 function changeTempToFahrenheit(event) {
@@ -98,6 +100,36 @@ function changeTempToCelsius(event) {
   fahrenheitLink.classList.remove("active");
   celsiusLink.classList.add("active");
   currentTemperature.innerHTML = Math.round(celsiusTemp);
+}
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday"];
+  let forcastHTML = `<div class="row"><div class="col-12"><div class="card-group">`;
+  days.forEach(function (day) {
+    forcastHTML =
+      forcastHTML +
+      `  
+                <div class="card bg-transparent">
+                  <div class="card-body">
+                    <h5 class="card-title">
+                      ${day},
+                      <div>15 June</div>
+                    </h5>
+                    <p class="card-text tempertemperatureture-bottom">
+                      <strong>29℃</strong> | 20℃
+                      <br />
+                      sunny
+                      <br />
+                      <br />
+                      <i class="fa-solid fa-sun sun-icon-bottom"></i>
+                    </p>
+                  </div>
+                </div>`;
+  });
+
+  forcastHTML = forcastHTML + `</div> </div> </div></div>`;
+  forecastElement.innerHTML = forcastHTML;
 }
 
 let currentDay = document.querySelector("#current-day");
